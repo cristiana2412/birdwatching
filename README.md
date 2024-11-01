@@ -59,7 +59,7 @@ To stop the containers:
 ### API Documentation
 
 The API documentation is generated automatically using Swagger. After starting the application, access it at:
-    - Swagger UI: http://localhost:8080/swagger-ui.html
+- Swagger UI: http://localhost:8080/swagger-ui.html
 
 ---
 
@@ -118,9 +118,9 @@ The database is initialized with a schema for birds and sightings, created throu
 This script also creates indexes for optimized querying and inserts sample data for testing.
 
 init.sql Highlights:
-    - Tables: birds and sightings with necessary fields and foreign key constraints.
-    - Indexes: Created for optimal querying of bird name, color, sighting location, and date.
-    - Sample Data: Includes sample birds and sightings to validate the application’s functionality immediately after deployment.
+- Tables: birds and sightings with necessary fields and foreign key constraints.
+- Indexes: Created for optimal querying of bird name, color, sighting location, and date.
+- Sample Data: Includes sample birds and sightings to validate the application’s functionality immediately after deployment.
 
 ---
 
@@ -159,7 +159,7 @@ View Logs: Check logs for troubleshooting:
 ---
 
 ### Additional Considerations
-Thread Safety: The application leverages Spring WebFlux's non-blocking, reactive design for thread-safe operations.
-Error Handling: Includes validation for request parameters and meaningful HTTP status codes for error handling.
-Performance: Configured with sensible memory and CPU limits for efficient local use.
-Swagger Integration: Automatically documents all endpoints and models, providing developers with a clear view of API capabilities.
+- Thread Safety: The application leverages Spring WebFlux's non-blocking, reactive design for thread-safe operations.
+- Error Handling: Includes validation for request parameters and meaningful HTTP status codes for error handling.
+- Performance: Configured with sensible memory and CPU limits for efficient local use.
+- Swagger Integration: Automatically documents all endpoints and models, providing developers with a clear view of API capabilities.
