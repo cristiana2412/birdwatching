@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public interface SightingRepository extends ReactiveCrudRepository<Sighting, Long> {
     Flux<Sighting> findByBirdId(Long birdId);
 
-    Mono<Sighting> findByLocationId(Long locationId);
+    Mono<Sighting> findById(Long locationId);
 
     Flux<Sighting> findByDateTimeBetween(LocalDateTime start, LocalDateTime end);
 }

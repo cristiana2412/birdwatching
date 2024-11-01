@@ -27,7 +27,7 @@ public class SightingService {
     }
 
     public Mono<Sighting> findSightingByLocationId(Long locationId) {
-        return sightingRepository.findByLocationId(locationId);
+        return sightingRepository.findById(locationId);
     }
 
     public Flux<Sighting> findSightingsByDateTimeRange(LocalDateTime start, LocalDateTime end) {

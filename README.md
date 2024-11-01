@@ -38,7 +38,7 @@ Run the following commands in your terminal:
 
 ### 2. Build the Project
 
-Build the Java+Spring WebFlux application using Maven either manually*, via the 'mvn clean package -DskipTests' command, or as it is currently intended, via Docker-Compose commands.
+Build the birdwatching application using Maven either manually*, via the 'mvn clean package -DskipTests' command, or as it is currently intended, via Docker-Compose commands.
 
 *This step is helpful for local development and testing.
 

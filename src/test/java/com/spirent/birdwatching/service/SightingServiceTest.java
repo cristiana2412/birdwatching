@@ -72,7 +72,7 @@ class SightingServiceTest {
 
     @Test
     void shouldFindSightingsByLocation() {
-        when(sightingRepository.findByLocationId(4353L)).thenReturn(Mono.just(sampleSighting));
+        when(sightingRepository.findById(4353L)).thenReturn(Mono.just(sampleSighting));
 
         Mono<Sighting> result = sightingService.findSightingByLocationId(4353L);
 
