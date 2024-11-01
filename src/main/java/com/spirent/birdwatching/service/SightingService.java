@@ -26,10 +26,8 @@ public class SightingService {
         return sightingRepository.findByBirdId(birdId);
     }
 
-    public Flux<Sighting> findSightingsByLocation(String location) {
-        return sightingRepository.findByLocationContainingIgnoreCase(location);
-
-
+    public Mono<Sighting> findSightingByLocationId(Long locationId) {
+        return sightingRepository.findByLocationId(locationId);
     }
 
     public Flux<Sighting> findSightingsByDateTimeRange(LocalDateTime start, LocalDateTime end) {
