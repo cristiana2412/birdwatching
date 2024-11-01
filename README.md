@@ -32,27 +32,30 @@ This project is a REST API service for managing bird data and bird sightings and
 ### 1. Clone the Repository
 
 Run the following commands in your terminal:
- - git clone https://github.com/cristiana2412/birdwatching.git
- - cd /path/to/repo/birdwatching
+    
+    git clone https://github.com/cristiana2412/birdwatching.git
+    cd /path/to/repo/birdwatching
 
 ### 2. Build the Project
 
 Build the Java+Spring WebFlux application using Maven either manually*, via the 'mvn clean package -DskipTests' command, or as it is currently intended, via Docker-Compose commands.
- 
-    *This step is helpful for local development and testing.
+
+*This step is helpful for local development and testing.
 
 ### 3. Start the Application with Docker Compose
 
 To start both the application and PostgreSQL containers, simply run:
- - docker-compose up
+    
+    docker-compose up
 
-    This command will:
-    - Build and start the Java+Spring WebFlux application (exposed on port 8080).
-    - Start a PostgreSQL instance with the necessary database schema and initial data loaded via init.sql.
-    - Start an Adminer instance (accessible at http://localhost:8081) for managing the PostgreSQL database.
+This command will:
+- Build and start the Java+Spring WebFlux application (exposed on port 8080).
+- Start a PostgreSQL instance with the necessary database schema and initial data loaded via init.sql.
+- Start an Adminer instance (accessible at http://localhost:8081) for managing the PostgreSQL database.
    
 To stop the containers:
-  - docker-compose down;
+
+    docker-compose down
 
 ---
 
@@ -141,20 +144,35 @@ The project includes configurations for unit and integration testing:
 - Error Scenarios: Includes tests for validation errors and data conflicts.
 
 To run tests, use the following command in the terminal:
-  - mvn test
+
+    mvn test
 
 ---
 
 ### Troubleshooting
 
-Reinitialize Database: If you need to reset the database, stop the containers and remove the volume:
-- docker-compose down -v; and
-- docker-compose up;
+Reinitialize Database: 
+If you need to reset the database, stop the containers and remove the volume by running:
+    
+    docker-compose down -v
 
-View Logs: Check logs for troubleshooting:
-- docker-compose logs -f; or
-- docker logs app (for logs of the app); or
-- docker logs db (for logs of the database).
+followed by:
+
+    docker-compose up 
+
+If you need to view logs for troubleshooting, run the following command based on your needs:
+
+1. For logs from docker-compose:
+
+       docker-compose logs -f
+
+2. For logs from the app:
+
+       docker logs app 
+
+3. For logs from the database:
+
+       docker logs db 
 
 ---
 
