@@ -6,14 +6,13 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DB_HOST=postgres
+      - DB_HOST=db
       - DB_PORT=5432
       - DB_NAME=birdsdb
       - DB_USER=bird_user
       - DB_PASSWORD=bird_password
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     networks:
       - birdnet
     deploy:
@@ -25,21 +24,16 @@ services:
   db:
     image: postgres:13
     container_name: bird_service_db
-    restart: always
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: birdsdb
-      POSTGRES_USER: bird_user
-      POSTGRES_PASSWORD: bird_password
+      - POSTGRES_DB=birdsdb
+      - POSTGRES_USER=bird_user
+      - POSTGRES_PASSWORD=bird_password
     ports:
       - '5432:5432'
     volumes:
       - db:/var/lib/postgresql/data
       - ./db_init:/docker-entrypoint-initdb.d # For initial SQL scripts
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
-      interval: 1s
-      timeout: 5s
-      retries: 10
     networks:
       - birdnet
     deploy:

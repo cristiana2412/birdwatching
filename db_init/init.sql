@@ -1,5 +1,5 @@
 -- Initialize the birds table
-CREATE TABLE birds
+CREATE TABLE IF NOT EXISTS birds
 (
     id     SERIAL PRIMARY KEY,
     name   VARCHAR(100) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE birds
 );
 
 -- Initialize the sightings table with a foreign key reference to the birds table
-CREATE TABLE sightings
+CREATE TABLE IF NOT EXISTS sightings
 (
     id            SERIAL PRIMARY KEY,
     bird_id       INT NOT NULL,
